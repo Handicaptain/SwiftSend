@@ -68,5 +68,17 @@ namespace SwiftSend
             studentscs.Show();
             this.Hide();
         }
+
+        private void btnMenuAddStudents_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the classes form
+            AddStudents emailForm = new AddStudents();
+
+            // Hide the current form
+            this.Hide();
+
+            // Show the new form
+            emailForm.Show();
+        }
     }
 }

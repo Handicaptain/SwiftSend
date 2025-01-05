@@ -30,6 +30,7 @@
         {
             this.lblMenu = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMenuAddStudents = new System.Windows.Forms.Button();
             this.btnAddTemplate = new System.Windows.Forms.Button();
             this.btnViewStudents = new System.Windows.Forms.Button();
             this.btnAddClass = new System.Windows.Forms.Button();
@@ -52,14 +53,26 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnMenuAddStudents);
             this.panel1.Controls.Add(this.btnAddTemplate);
             this.panel1.Controls.Add(this.btnViewStudents);
             this.panel1.Controls.Add(this.btnAddClass);
             this.panel1.Controls.Add(this.btnEmailCommunication);
             this.panel1.Location = new System.Drawing.Point(318, 118);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(466, 387);
+            this.panel1.Size = new System.Drawing.Size(466, 454);
             this.panel1.TabIndex = 1;
+            // 
+            // btnMenuAddStudents
+            // 
+            this.btnMenuAddStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.btnMenuAddStudents.Location = new System.Drawing.Point(85, 365);
+            this.btnMenuAddStudents.Name = "btnMenuAddStudents";
+            this.btnMenuAddStudents.Size = new System.Drawing.Size(321, 47);
+            this.btnMenuAddStudents.TabIndex = 5;
+            this.btnMenuAddStudents.Text = "Add students to class";
+            this.btnMenuAddStudents.UseVisualStyleBackColor = true;
+            this.btnMenuAddStudents.Click += new System.EventHandler(this.btnMenuAddStudents_Click);
             // 
             // btnAddTemplate
             // 
@@ -131,6 +144,7 @@
         private System.Windows.Forms.Button btnAddClass;
         private System.Windows.Forms.Button btnViewStudents;
         private System.Windows.Forms.Button btnAddTemplate;
+        private System.Windows.Forms.Button btnMenuAddStudents;
     }
 }
 
