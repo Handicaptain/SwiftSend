@@ -54,12 +54,6 @@ namespace SwiftSend
                         newCid = result != null ? Convert.ToInt32(result) : 1;
                     }
 
-                    // Enable IDENTITY_INSERT for the table
-                    //string enableIdentityInsertQuery = "SET IDENTITY_INSERT tblClass ON";
-                    //using (SqlCommand enableIdentityCmd = new SqlCommand(enableIdentityInsertQuery, conn))
-                    //{
-                    //    enableIdentityCmd.ExecuteNonQuery();
-                    //}
 
                     // Insert the new row with the calculated cid
                     string insertQuery = "INSERT INTO tblClass (nameClass, yearGroup, number) VALUES (@nameClass, @yearGroup, @number)";
@@ -104,6 +98,11 @@ namespace SwiftSend
 
 
         private void txtClassId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void classes_Load(object sender, EventArgs e)
         {
 
         }

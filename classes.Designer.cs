@@ -160,6 +160,7 @@
             this.Controls.Add(this.lblClasses);
             this.Name = "classes";
             this.Text = "classes";
+            this.Load += new System.EventHandler(this.classes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

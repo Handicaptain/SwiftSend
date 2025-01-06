@@ -41,6 +41,8 @@
             this.txtClass = new System.Windows.Forms.TextBox();
             this.btnBack4 = new System.Windows.Forms.Button();
             this.btnSave4 = new System.Windows.Forms.Button();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.txtTitle = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblAddStudentsToClass
@@ -66,7 +68,7 @@
             // 
             this.lblForename.AutoSize = true;
             this.lblForename.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblForename.Location = new System.Drawing.Point(309, 191);
+            this.lblForename.Location = new System.Drawing.Point(315, 227);
             this.lblForename.Name = "lblForename";
             this.lblForename.Size = new System.Drawing.Size(115, 25);
             this.lblForename.TabIndex = 37;
@@ -76,7 +78,7 @@
             // 
             this.lblSurname.AutoSize = true;
             this.lblSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSurname.Location = new System.Drawing.Point(309, 237);
+            this.lblSurname.Location = new System.Drawing.Point(315, 273);
             this.lblSurname.Name = "lblSurname";
             this.lblSurname.Size = new System.Drawing.Size(104, 25);
             this.lblSurname.TabIndex = 38;
@@ -86,7 +88,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(309, 289);
+            this.lblEmail.Location = new System.Drawing.Point(315, 325);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(71, 25);
             this.lblEmail.TabIndex = 39;
@@ -95,42 +97,46 @@
             // txtForename
             // 
             this.txtForename.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtForename.Location = new System.Drawing.Point(440, 191);
+            this.txtForename.Location = new System.Drawing.Point(446, 227);
             this.txtForename.Name = "txtForename";
             this.txtForename.Size = new System.Drawing.Size(322, 31);
             this.txtForename.TabIndex = 40;
+            this.txtForename.TextChanged += new System.EventHandler(this.txtForename_TextChanged);
             // 
             // txtSurname
             // 
             this.txtSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSurname.Location = new System.Drawing.Point(440, 237);
+            this.txtSurname.Location = new System.Drawing.Point(446, 273);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(322, 31);
             this.txtSurname.TabIndex = 41;
+            this.txtSurname.TextChanged += new System.EventHandler(this.txtSurname_TextChanged);
             // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(440, 283);
+            this.txtEmail.Location = new System.Drawing.Point(446, 319);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(322, 31);
             this.txtEmail.TabIndex = 42;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // btnAddStudents
             // 
             this.btnAddStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddStudents.Location = new System.Drawing.Point(472, 413);
+            this.btnAddStudents.Location = new System.Drawing.Point(478, 449);
             this.btnAddStudents.Name = "btnAddStudents";
             this.btnAddStudents.Size = new System.Drawing.Size(251, 34);
             this.btnAddStudents.TabIndex = 43;
             this.btnAddStudents.Text = "Add students to class";
             this.btnAddStudents.UseVisualStyleBackColor = true;
+            this.btnAddStudents.Click += new System.EventHandler(this.btnAddStudents_Click);
             // 
             // lblClass
             // 
             this.lblClass.AutoSize = true;
             this.lblClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClass.Location = new System.Drawing.Point(439, 331);
+            this.lblClass.Location = new System.Drawing.Point(445, 367);
             this.lblClass.Name = "lblClass";
             this.lblClass.Size = new System.Drawing.Size(72, 25);
             this.lblClass.TabIndex = 44;
@@ -139,10 +145,11 @@
             // txtClass
             // 
             this.txtClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClass.Location = new System.Drawing.Point(517, 331);
+            this.txtClass.Location = new System.Drawing.Point(523, 367);
             this.txtClass.Name = "txtClass";
             this.txtClass.Size = new System.Drawing.Size(186, 31);
             this.txtClass.TabIndex = 45;
+            this.txtClass.TextChanged += new System.EventHandler(this.txtClass_TextChanged);
             // 
             // btnBack4
             // 
@@ -169,11 +176,33 @@
             this.btnSave4.Text = "Save";
             this.btnSave4.UseVisualStyleBackColor = false;
             // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(315, 186);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(59, 25);
+            this.lblTitle.TabIndex = 48;
+            this.lblTitle.Text = "Title:";
+            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitle.Location = new System.Drawing.Point(446, 180);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(322, 31);
+            this.txtTitle.TabIndex = 49;
+            this.txtTitle.TextChanged += new System.EventHandler(this.txtTitle_TextChanged);
+            // 
             // AddStudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 609);
+            this.Controls.Add(this.txtTitle);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnSave4);
             this.Controls.Add(this.btnBack4);
             this.Controls.Add(this.txtClass);
@@ -210,5 +239,7 @@
         private System.Windows.Forms.TextBox txtClass;
         private System.Windows.Forms.Button btnBack4;
         private System.Windows.Forms.Button btnSave4;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.TextBox txtTitle;
     }
 }
