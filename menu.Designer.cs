@@ -35,6 +35,7 @@
             this.btnViewStudents = new System.Windows.Forms.Button();
             this.btnAddClass = new System.Windows.Forms.Button();
             this.btnEmailCommunication = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +43,7 @@
             // 
             this.lblMenu.AutoSize = true;
             this.lblMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMenu.Location = new System.Drawing.Point(507, 52);
+            this.lblMenu.Location = new System.Drawing.Point(507, 21);
             this.lblMenu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMenu.Name = "lblMenu";
             this.lblMenu.Size = new System.Drawing.Size(81, 31);
@@ -58,15 +59,15 @@
             this.panel1.Controls.Add(this.btnViewStudents);
             this.panel1.Controls.Add(this.btnAddClass);
             this.panel1.Controls.Add(this.btnEmailCommunication);
-            this.panel1.Location = new System.Drawing.Point(318, 118);
+            this.panel1.Location = new System.Drawing.Point(326, 75);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(466, 454);
+            this.panel1.Size = new System.Drawing.Size(466, 439);
             this.panel1.TabIndex = 1;
             // 
             // btnMenuAddStudents
             // 
             this.btnMenuAddStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.btnMenuAddStudents.Location = new System.Drawing.Point(85, 365);
+            this.btnMenuAddStudents.Location = new System.Drawing.Point(86, 354);
             this.btnMenuAddStudents.Name = "btnMenuAddStudents";
             this.btnMenuAddStudents.Size = new System.Drawing.Size(321, 47);
             this.btnMenuAddStudents.TabIndex = 5;
@@ -77,7 +78,7 @@
             // btnAddTemplate
             // 
             this.btnAddTemplate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.btnAddTemplate.Location = new System.Drawing.Point(85, 283);
+            this.btnAddTemplate.Location = new System.Drawing.Point(86, 272);
             this.btnAddTemplate.Name = "btnAddTemplate";
             this.btnAddTemplate.Size = new System.Drawing.Size(321, 47);
             this.btnAddTemplate.TabIndex = 4;
@@ -88,7 +89,7 @@
             // btnViewStudents
             // 
             this.btnViewStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.btnViewStudents.Location = new System.Drawing.Point(85, 201);
+            this.btnViewStudents.Location = new System.Drawing.Point(86, 190);
             this.btnViewStudents.Name = "btnViewStudents";
             this.btnViewStudents.Size = new System.Drawing.Size(321, 47);
             this.btnViewStudents.TabIndex = 2;
@@ -99,7 +100,7 @@
             // btnAddClass
             // 
             this.btnAddClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.btnAddClass.Location = new System.Drawing.Point(85, 121);
+            this.btnAddClass.Location = new System.Drawing.Point(86, 110);
             this.btnAddClass.Name = "btnAddClass";
             this.btnAddClass.Size = new System.Drawing.Size(321, 47);
             this.btnAddClass.TabIndex = 1;
@@ -110,7 +111,7 @@
             // btnEmailCommunication
             // 
             this.btnEmailCommunication.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.btnEmailCommunication.Location = new System.Drawing.Point(85, 43);
+            this.btnEmailCommunication.Location = new System.Drawing.Point(86, 32);
             this.btnEmailCommunication.Name = "btnEmailCommunication";
             this.btnEmailCommunication.Size = new System.Drawing.Size(321, 47);
             this.btnEmailCommunication.TabIndex = 0;
@@ -118,11 +119,23 @@
             this.btnEmailCommunication.UseVisualStyleBackColor = true;
             this.btnEmailCommunication.Click += new System.EventHandler(this.btnEmailCommunication_Click);
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.btnLogout.Location = new System.Drawing.Point(483, 538);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(175, 47);
+            this.btnLogout.TabIndex = 5;
+            this.btnLogout.Text = "Log out";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 609);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblMenu);
             this.Font = new System.Drawing.Font("Vivaldi", 8.25F);
@@ -145,6 +158,7 @@
         private System.Windows.Forms.Button btnViewStudents;
         private System.Windows.Forms.Button btnAddTemplate;
         private System.Windows.Forms.Button btnMenuAddStudents;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
 

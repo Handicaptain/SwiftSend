@@ -64,15 +64,13 @@ namespace SwiftSend
             // txtClass
             // 
             this.txtClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClass.ForeColor = System.Drawing.Color.Silver;
+            this.txtClass.ForeColor = System.Drawing.Color.Black;
             this.txtClass.Location = new System.Drawing.Point(72, 181);
             this.txtClass.Name = "txtClass";
             this.txtClass.Size = new System.Drawing.Size(189, 31);
             this.txtClass.TabIndex = 0;
             this.txtClass.Text = "Enter class";
-            this.txtClass.TextChanged += new System.EventHandler(this.txtClass_TextChanged);
-            this.txtClass.Enter += new System.EventHandler(this.txtClass_Enter);
-            this.txtClass.Leave += new System.EventHandler(this.txtClass_leave);
+
             // 
             // lblViewStudents
             // 
@@ -123,9 +121,9 @@ namespace SwiftSend
             // dgvStudents
             // 
             this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudents.Location = new System.Drawing.Point(72, 264);
+            this.dgvStudents.Location = new System.Drawing.Point(72, 246);
             this.dgvStudents.Name = "dgvStudents";
-            this.dgvStudents.Size = new System.Drawing.Size(570, 242);
+            this.dgvStudents.Size = new System.Drawing.Size(702, 295);
             this.dgvStudents.TabIndex = 39;
             // 
             // studentscs
@@ -143,7 +141,7 @@ namespace SwiftSend
             this.Controls.Add(this.lblStudents);
             this.Name = "studentscs";
             this.Text = "studentscs";
-            this.Leave += new System.EventHandler(this.txtClass_leave);
+            this.Load += new System.EventHandler(this.studentscs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

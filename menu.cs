@@ -80,5 +80,17 @@ namespace SwiftSend
             // Show the new form
             emailForm.Show();
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the classes form
+            login emailForm = new login();
+
+            // Hide the current form
+            this.Hide();
+
+            // Show the new form
+            emailForm.Show();
+        }
     }
 }

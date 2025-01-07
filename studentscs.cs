@@ -29,26 +29,6 @@ namespace SwiftSend
 
 
 
-        private void txtClass_TextChanged(object sender, EventArgs e)
-        {
-            if (isPlaceholderActive)
-            {
-                txtClass.Text = "";
-                txtClass.ForeColor = Color.Black;
-                isPlaceholderActive = false;
-            }
-        }
-
-        private void txtClass_leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtClass.Text))
-            {
-                txtClass.Text = "Enter class";
-                txtClass.ForeColor = Color.Silver;
-                isPlaceholderActive = true;
-            }
-        }
-
         private void txtClass_Enter(object sender, EventArgs e)
         {
             if (isPlaceholderActive)
@@ -58,6 +38,17 @@ namespace SwiftSend
                 isPlaceholderActive = false;
             }
         }
+
+        private void txtClass_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtClass.Text))
+            {
+                txtClass.Text = "Enter class";
+                txtClass.ForeColor = Color.Silver;
+                isPlaceholderActive = true;
+            }
+        }
+
 
         private void Form_Click(object sender, EventArgs e)
         {
@@ -132,7 +123,16 @@ namespace SwiftSend
             }
         }
 
-
+        private void studentscs_Load(object sender, EventArgs e)
+        {
+            // Set DataGridView properties
+            dgvStudents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Columns fill the width of the DataGridView
+            dgvStudents.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells; // Rows adjust to fit content
+            dgvStudents.AllowUserToResizeColumns = false; // Disable manual column resizing
+            dgvStudents.AllowUserToResizeRows = false; // Disable manual row resizing
+            dgvStudents.DefaultCellStyle.WrapMode = DataGridViewTriState.True; // Enable text wrapping
+            dgvStudents.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; // Center column headers
+        }
 
     }
 }
