@@ -1,4 +1,6 @@
-﻿namespace SwiftSend
+﻿using System;
+
+namespace SwiftSend
 {
     partial class emailCommunication
     {
@@ -48,6 +50,7 @@
             this.cblClasses = new System.Windows.Forms.CheckedListBox();
             this.lblCblStudents = new System.Windows.Forms.Label();
             this.btnSend = new System.Windows.Forms.Button();
+            this.btnSearchClasses = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblPg2Email
@@ -79,7 +82,6 @@
             this.lblSubject.Size = new System.Drawing.Size(73, 24);
             this.lblSubject.TabIndex = 2;
             this.lblSubject.Text = "Subject";
-            this.lblSubject.Click += new System.EventHandler(this.lblSubject_Click);
             // 
             // txtTitle
             // 
@@ -90,6 +92,7 @@
             this.txtTitle.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtTitle.Size = new System.Drawing.Size(399, 43);
             this.txtTitle.TabIndex = 3;
+            this.txtTitle.TextChanged += new System.EventHandler(this.txtTitle_TextChanged);
             // 
             // tblMessage
             // 
@@ -110,6 +113,7 @@
             this.txtMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtMessage.Size = new System.Drawing.Size(399, 216);
             this.txtMessage.TabIndex = 5;
+            this.txtMessage.TextChanged += new System.EventHandler(this.txtMessage_TextChanged);
             // 
             // lblAttachment
             // 
@@ -161,24 +165,19 @@
             // 
             this.lblClasses.AutoSize = true;
             this.lblClasses.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClasses.Location = new System.Drawing.Point(792, 18);
+            this.lblClasses.Location = new System.Drawing.Point(767, 14);
             this.lblClasses.Name = "lblClasses";
             this.lblClasses.Size = new System.Drawing.Size(96, 25);
             this.lblClasses.TabIndex = 12;
             this.lblClasses.Text = "Classes";
-            this.lblClasses.Click += new System.EventHandler(this.lblClasses_Click);
             // 
             // clbStudents
             // 
             this.clbStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clbStudents.FormattingEnabled = true;
-            this.clbStudents.Items.AddRange(new object[] {
-            "Display Students",
-            "From Database",
-            "Here"});
-            this.clbStudents.Location = new System.Drawing.Point(797, 367);
+            this.clbStudents.Location = new System.Drawing.Point(772, 367);
             this.clbStudents.Name = "clbStudents";
-            this.clbStudents.Size = new System.Drawing.Size(249, 186);
+            this.clbStudents.Size = new System.Drawing.Size(294, 186);
             this.clbStudents.TabIndex = 14;
             this.clbStudents.SelectedIndexChanged += new System.EventHandler(this.clbStudents_SelectedIndexChanged);
             // 
@@ -186,7 +185,7 @@
             // 
             this.cblStudentSelectAll.AutoSize = true;
             this.cblStudentSelectAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cblStudentSelectAll.Location = new System.Drawing.Point(797, 332);
+            this.cblStudentSelectAll.Location = new System.Drawing.Point(772, 332);
             this.cblStudentSelectAll.Name = "cblStudentSelectAll";
             this.cblStudentSelectAll.Size = new System.Drawing.Size(121, 29);
             this.cblStudentSelectAll.TabIndex = 15;
@@ -223,31 +222,28 @@
             // 
             this.cblClassesSelectAll.AutoSize = true;
             this.cblClassesSelectAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cblClassesSelectAll.Location = new System.Drawing.Point(797, 55);
+            this.cblClassesSelectAll.Location = new System.Drawing.Point(772, 42);
             this.cblClassesSelectAll.Name = "cblClassesSelectAll";
             this.cblClassesSelectAll.Size = new System.Drawing.Size(121, 29);
             this.cblClassesSelectAll.TabIndex = 19;
             this.cblClassesSelectAll.Text = "Select All";
             this.cblClassesSelectAll.UseVisualStyleBackColor = true;
+            this.cblClassesSelectAll.CheckedChanged += new System.EventHandler(this.cblClassesSelectAll_CheckedChanged);
             // 
             // cblClasses
             // 
             this.cblClasses.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cblClasses.FormattingEnabled = true;
-            this.cblClasses.Items.AddRange(new object[] {
-            "Display Classes ",
-            "From Databse ",
-            "Here"});
-            this.cblClasses.Location = new System.Drawing.Point(797, 95);
+            this.cblClasses.Location = new System.Drawing.Point(772, 77);
             this.cblClasses.Name = "cblClasses";
-            this.cblClasses.Size = new System.Drawing.Size(249, 186);
+            this.cblClasses.Size = new System.Drawing.Size(274, 186);
             this.cblClasses.TabIndex = 18;
             // 
             // lblCblStudents
             // 
             this.lblCblStudents.AutoSize = true;
             this.lblCblStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCblStudents.Location = new System.Drawing.Point(792, 297);
+            this.lblCblStudents.Location = new System.Drawing.Point(767, 304);
             this.lblCblStudents.Name = "lblCblStudents";
             this.lblCblStudents.Size = new System.Drawing.Size(105, 25);
             this.lblCblStudents.TabIndex = 20;
@@ -264,12 +260,27 @@
             this.btnSend.TabIndex = 21;
             this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = false;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // btnSearchClasses
+            // 
+            this.btnSearchClasses.BackColor = System.Drawing.Color.LightGray;
+            this.btnSearchClasses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchClasses.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchClasses.Location = new System.Drawing.Point(841, 269);
+            this.btnSearchClasses.Name = "btnSearchClasses";
+            this.btnSearchClasses.Size = new System.Drawing.Size(121, 22);
+            this.btnSearchClasses.TabIndex = 22;
+            this.btnSearchClasses.Text = "Search for students";
+            this.btnSearchClasses.UseVisualStyleBackColor = false;
+            this.btnSearchClasses.Click += new System.EventHandler(this.btnSearchClasses_Click);
             // 
             // emailCommunication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 609);
+            this.Controls.Add(this.btnSearchClasses);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.lblCblStudents);
             this.Controls.Add(this.cblClassesSelectAll);
@@ -297,6 +308,7 @@
 
         }
 
+
         #endregion
 
         private System.Windows.Forms.Label lblPg2Email;
@@ -319,5 +331,6 @@
         private System.Windows.Forms.CheckedListBox cblClasses;
         private System.Windows.Forms.Label lblCblStudents;
         private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.Button btnSearchClasses;
     }
 }
