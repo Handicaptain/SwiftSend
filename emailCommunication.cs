@@ -25,25 +25,20 @@ namespace SwiftSend
             // Connection string to your local SQL Server database
             string connectionString = @"server=.;database=dbSwiftSend;Integrated Security=SSPI";
 
-            // Query to fetch the data from tblClass
             string query = "SELECT nameClass FROM tblClass";
 
             try
             {
-                // Open a connection to the database
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
 
-                    // Execute the query
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            // Clear existing items in the CheckedListBox
                             cblClasses.Items.Clear();
 
-                            // Loop through the results and add each to the CheckedListBox
                             while (reader.Read())
                             {
                                 cblClasses.Items.Add(reader["nameClass"].ToString());
@@ -227,7 +222,6 @@ namespace SwiftSend
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            // Ensure title and message are provided
             string subject = txtTitle.Text.Trim();
             string body = txtMessage.Text.Trim();
 
@@ -243,7 +237,6 @@ namespace SwiftSend
                 return;
             }
 
-            // Get the selected students
             var selectedStudents = clbStudents.CheckedItems;
             if (selectedStudents.Count == 0)
             {
@@ -251,10 +244,8 @@ namespace SwiftSend
                 return;
             }
 
-            // Connection string to your local SQL Server database
             string connectionString = @"server=.;database=dbSwiftSend;Integrated Security=SSPI";
 
-            // Collect the email addresses for the selected students
             List<string> emailAddresses = new List<string>();
 
             try
@@ -265,12 +256,10 @@ namespace SwiftSend
 
                     foreach (var studentName in selectedStudents)
                     {
-                        // Split the full name into forename and surname
                         string[] nameParts = studentName.ToString().Split(' ');
                         string forename = nameParts[0];
                         string surname = nameParts.Length > 1 ? nameParts[1] : "";
 
-                        // Query to fetch the email address of the selected student
                         string query = @"
                 SELECT email
                 FROM tblStudents
@@ -302,26 +291,26 @@ namespace SwiftSend
                 return;
             }
 
-            // Send emails using Outlook's SMTP server
             try
             {
-                using (System.Net.Mail.SmtpClient smtpClient = new System.Net.Mail.SmtpClient("smtp.office365.com"))
+                using (System.Net.Mail.SmtpClient smtpClient = new System.Net.Mail.SmtpClient("localhost", 25))
                 {
-                    smtpClient.Port = 587; // Outlook's SMTP port
-                    smtpClient.Credentials = new System.Net.NetworkCredential("eb05263952@priestley.ac.uk", "Gc5xjvjr9Kyt!");
-                    smtpClient.EnableSsl = true; // Enable TLS/SSL
+  
+
+                    var mail = new MailMessage
+                    {
+                        Subject = subject,
+                        Body = body,
+                        IsBodyHtml = false
+                    };
+
+                    mail.From = new MailAddress("eb05263952@priestley.ac.uk");
 
                     foreach (string emailAddress in emailAddresses)
                     {
-                        using (System.Net.Mail.MailMessage mail = new System.Net.Mail.MailMessage())
-                        {
-                            mail.From = new System.Net.Mail.MailAddress("eb05263952@priestley.ac.uk");
-                            mail.To.Add(emailAddress);
-                            mail.Subject = subject;
-                            mail.Body = body;
-
-                            smtpClient.Send(mail);
-                        }
+                        mail.To.Clear();
+                        mail.To.Add(emailAddress);
+                        smtpClient.Send(mail);
                     }
                 }
 

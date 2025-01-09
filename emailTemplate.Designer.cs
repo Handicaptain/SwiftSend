@@ -62,6 +62,7 @@
             // 
             // txtEmailTemplateName
             // 
+            this.txtEmailTemplateName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailTemplateName.Location = new System.Drawing.Point(91, 117);
             this.txtEmailTemplateName.Multiline = true;
             this.txtEmailTemplateName.Name = "txtEmailTemplateName";
@@ -81,6 +82,7 @@
             // 
             // txtEmailTemplateMessage
             // 
+            this.txtEmailTemplateMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailTemplateMessage.Location = new System.Drawing.Point(91, 242);
             this.txtEmailTemplateMessage.Multiline = true;
             this.txtEmailTemplateMessage.Name = "txtEmailTemplateMessage";
@@ -102,6 +104,7 @@
             // txtFilePath
             // 
             this.txtFilePath.Enabled = false;
+            this.txtFilePath.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFilePath.Location = new System.Drawing.Point(146, 521);
             this.txtFilePath.Multiline = true;
             this.txtFilePath.Name = "txtFilePath";

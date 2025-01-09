@@ -35,7 +35,6 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.btnBypassLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblLoginHere
@@ -109,25 +108,11 @@
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // btnBypassLogin
-            // 
-            this.btnBypassLogin.BackColor = System.Drawing.Color.Silver;
-            this.btnBypassLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBypassLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBypassLogin.Location = new System.Drawing.Point(465, 412);
-            this.btnBypassLogin.Name = "btnBypassLogin";
-            this.btnBypassLogin.Size = new System.Drawing.Size(203, 53);
-            this.btnBypassLogin.TabIndex = 38;
-            this.btnBypassLogin.Text = "Bypass Login";
-            this.btnBypassLogin.UseVisualStyleBackColor = false;
-            this.btnBypassLogin.Click += new System.EventHandler(this.btnBypassLogin_Click);
-            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 609);
-            this.Controls.Add(this.btnBypassLogin);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -152,6 +137,5 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Button btnBypassLogin;
     }
 }

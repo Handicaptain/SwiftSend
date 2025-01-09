@@ -85,7 +85,7 @@ namespace SwiftSend
             // 
             // txtTitle
             // 
-            this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTitle.Location = new System.Drawing.Point(51, 179);
             this.txtTitle.Multiline = true;
             this.txtTitle.Name = "txtTitle";
@@ -106,7 +106,7 @@ namespace SwiftSend
             // 
             // txtMessage
             // 
-            this.txtMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMessage.Location = new System.Drawing.Point(51, 288);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";

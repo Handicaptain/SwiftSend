@@ -126,7 +126,7 @@ namespace SwiftSend
         private void studentscs_Load(object sender, EventArgs e)
         {
             // Set DataGridView properties
-            dgvStudents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Columns fill the width of the DataGridView
+            dgvStudents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; 
             dgvStudents.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells; // Rows adjust to fit content
             dgvStudents.AllowUserToResizeColumns = false; // Disable manual column resizing
             dgvStudents.AllowUserToResizeRows = false; // Disable manual row resizing

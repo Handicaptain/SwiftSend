@@ -17,17 +17,6 @@ namespace SwiftSend
             InitializeComponent();
         }
 
-        private void btnBypassLogin_Click(object sender, EventArgs e)
-        {
-            // Create an instance of the classes form
-            menu emailForm = new menu();
-
-            // Hide the current form
-            this.Hide();
-
-            // Show the new form
-            emailForm.Show();
-        }
 
         private void login_Load(object sender, EventArgs e)
         {
@@ -46,7 +35,7 @@ namespace SwiftSend
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = "admin";
+            string username = "eburns";
             string password = "password";
 
             string enteredUsername = txtUsername.Text;
